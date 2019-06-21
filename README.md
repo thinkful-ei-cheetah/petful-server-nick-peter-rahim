@@ -1,6 +1,6 @@
 # Petful - Server
 
-Live @ [Petful-serer]([https://](https://fierce-bayou-88462.herokuapp.com/))
+Live @ [Petful-server](https://fierce-bayou-88462.herokuapp.com/)
 
 ## Introduction
 
