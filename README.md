@@ -24,3 +24,9 @@ Petful-server leverages the queue data structure to manage the list of cats and 
 
 - Node.js
 - express
+
+### Authors
+
+>Peter Pae<br/>
+>Rahim Morgan<br />
+>Nick Lee
