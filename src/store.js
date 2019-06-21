@@ -7,6 +7,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
+      user_name: 'Peter',
       name: 'Zeus',
       sex: 'Male',
       age: 3,
@@ -19,6 +20,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
+      user_name: 'Nick',
       name: 'Hera',
       sex: 'Female',
       age: 5,
@@ -31,6 +33,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
+      user_name: 'Rahim',
       name: 'Hercules',
       sex: 'Male',
       age: 15,
@@ -43,6 +46,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
+      user_name: 'Thinkful',
       name: 'Chord',
       sex: 'Male',
       age: 1,
@@ -55,6 +59,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
+      user_name: 'John',
       name: 'Max',
       sex: 'Male',
       age: 3,
@@ -70,6 +75,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
+      user_name: 'Peter',
       name: 'Stripe',
       sex: 'Female',
       age: 2,
@@ -82,6 +88,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
+      user_name: 'Nick',
       name: 'Scar',
       sex: 'Female',
       age: 2,
@@ -94,6 +101,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
+      user_name: 'Rahim',
       name: 'Boss',
       sex: 'Female',
       age: 2,
@@ -106,6 +114,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
+      user_name: 'Thinkful',
       name: 'Ben',
       sex: 'Male',
       age: 1,
@@ -118,6 +127,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
+      user_name: 'John',
       name: 'Fluffy',
       sex: 'Female',
       age: 5,
