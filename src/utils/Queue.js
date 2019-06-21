@@ -1,41 +1,43 @@
+'use strict';
 class _Node {
-    constructor(value) {
-        this.value=value,
-        this.next=null
-    }
+  constructor(value) {
+    (this.value = value), (this.next = null);
+  }
 }
 
 class Queue {
   constructor() {
-    this.first = null
-    this.last = null
+    this.first = null;
+    this.last = null;
   }
 
   enqueue(data) {
-    const node = new _Node(data)
+    const node = new _Node(data);
 
     if (this.first === null) {
-      this.first = node
+      this.first = node;
     }
 
     if (this.last) {
-      this.last.next = node
+      this.last.next = node;
     }
     //make the new node the last item on the queue
-    this.last = node
+    this.last = node;
   }
 
   dequeue() {
     //if the queue is empty, there is nothing to return
     if (this.first === null) {
-      return
+      return;
     }
-    const node = this.first
-    this.first = this.first.next
+    const node = this.first;
+    this.first = this.first.next;
     //if this is the last item in the queue
     if (node === this.last) {
-      this.last = null
+      this.last = null;
     }
-    return node.value
+    return node.value;
   }
 }
+
+module.exports = Queue;
