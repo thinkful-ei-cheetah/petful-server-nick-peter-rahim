@@ -19,7 +19,7 @@ dogRouter
   .delete((req, res, next) => {
     let dog = dogsQueue.dequeue();
     dogsQueue.enqueue(dog);
-    res.send(200);
+    res.sendStatus(200);
   });
 
 dogRouter.route('/all').get((req, res, next) => {

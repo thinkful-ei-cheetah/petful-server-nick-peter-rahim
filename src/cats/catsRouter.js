@@ -18,7 +18,7 @@ catRouter
   .delete((req, res, next) => {
     let cat = catsQueue.dequeue();
     catsQueue.enqueue(cat);
-    res.send(200);
+    res.sendStatus(200);
   });
 
 catRouter.route('/all').get((req, res, next) => {});
