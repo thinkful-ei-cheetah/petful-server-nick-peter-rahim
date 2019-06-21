@@ -1,6 +1,6 @@
 const whitelist = [
   'http://localhost:3000',
-  'https://petful-npr.now.sh/'
+  'https://petful-npr.now.sh'
 ]
 
 const originGenerator = function(origin, callback) {
