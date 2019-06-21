@@ -16,15 +16,12 @@ catRouter
     res.json(cats);
   })
   .delete((req, res, next) => {
-    res.json(catsQueue.dequeue);
-    //enque back to front of list
+    let cat = catsQueue.dequeue();
+    catsQueue.enqueue(cat);
+    res.send(200);
   });
 
-catRouter.route('/all').get((req, res, next) => {
-  let cat = catsQueue.dequeue();
-  catsQueue.enqueue(cat);
-  res.send(200);
-});
+catRouter.route('/all').get((req, res, next) => {});
 
 function getAllCats(catsList) {
   let currentNode = catsList.first;
