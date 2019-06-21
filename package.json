@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "author": "Alex Cumbo",
+  "authors": "Peter Pae, Rahim Morgan, Nick Lee",
   "license": "UNLICENSED",
   "main": "server.js",
   "scripts": {
