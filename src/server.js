@@ -5,12 +5,13 @@ const cors = require('cors');
 const morgan = require('morgan');
 const app = express();
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
+const { PORT } = require('./config')
 app.use(cors());
 
 app.use(morgan(morganSetting));
 
 app.use('/', (req, res) => {
-  res.json('Hello World from Peter, Rahim, Nick')
+  res.send('<h1>Hello World from Peter, Rahim, Nick</h1>')
 })
 
 // Catch-all 404
@@ -30,6 +31,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log('Serving on 8080');
 });
