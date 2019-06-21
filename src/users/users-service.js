@@ -32,8 +32,8 @@ const UsersService = {
     return usersArray
   },
 
-  getNextInLine() {
-    return queue.first
+  getPosition() {
+    
   },
 
   

@@ -6,11 +6,17 @@ const usersRouter = express.Router()
 usersRouter
   .route('/')
   .get((req, res, next) => {
-    let users = UsersService.getAllUsers()
+    const users = UsersService.getAllUsers()
 
     console.log(users)
 
     res.status(200).json(users)
+  })
+
+usersRouter
+  .route('/:user_id')
+  .get((req, res, next) => {
+    const user = UsersService.getPosition()
   })
 
 module.exports = usersRouter
