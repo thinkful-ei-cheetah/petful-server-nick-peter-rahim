@@ -4,30 +4,36 @@ const express = require('express');
 const dogRouter = express.Router();
 const bodyParser = express.json();
 const STORE = require('../store');
+const Queue = require('../utils/Queue');
+
+let dogsQueue = new Queue();
+
+STORE.dogs.forEach(dog => dogsQueue.enqueue(dog));
 
 dogRouter
   .route('/')
   .get((req, res, next) => {
-    res.json({
-      id: 1,
-      imageURL:
-        'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-      imageDescription:
-        'A smiling golden-brown golden retreiver listening to music.',
-      name: 'Zeus',
-      sex: 'Male',
-      age: 3,
-      breed: 'Golden Retriever',
-      story: 'Return by previous owner'
-    });
+    let dogs = getAllDogs(dogsQueue);
+    res.json(dogs);
   })
-  .delete((req, res, next) => {});
+  .delete((req, res, next) => {
+    let dog = dogsQueue.dequeue();
+    dogsQueue.enqueue(dog);
+    res.send(200);
+  });
 
-dogRouter
-  .route('/all')
-  .get((req, res, next) => {
-    res.json({});
-  })
-  .delete((req, res, next) => {});
+dogRouter.route('/all').get((req, res, next) => {
+  res.json({});
+});
+
+function getAllDogs(dogsList) {
+  let currentNode = dogsList.first;
+  let dogsArray = [];
+  while (currentNode !== null) {
+    dogsArray.push(currentNode.value);
+    currentNode = currentNode.next;
+  }
+  return dogsArray;
+}
 
 module.exports = dogRouter;

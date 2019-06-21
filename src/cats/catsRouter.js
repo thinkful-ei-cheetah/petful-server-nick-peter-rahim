@@ -4,26 +4,35 @@ const express = require('express');
 const catRouter = express.Router();
 const bodyParser = express.json();
 const STORE = require('../store');
+const Queue = require('../utils/Queue');
+
+let catsQueue = new Queue();
+STORE.cats.forEach(cat => catsQueue.enqueue(cat));
 
 catRouter
   .route('/')
   .get((req, res, next) => {
-    res.json({
-      id: 1,
-      imageURL:
-        'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
-      imageDescription:
-        'Orange bengal cat with black stripes lounging on concrete.',
-      name: 'Stripe',
-      sex: 'Female',
-      age: 2,
-      breed: 'Tabby',
-      story: 'Thrown on the street'
-    });
+    let cats = getAllCats(catsQueue);
+    res.json(cats);
   })
-  .delete((req, res, next) => {});
+  .delete((req, res, next) => {
+    res.json(catsQueue.dequeue);
+    //enque back to front of list
+  });
 
 catRouter.route('/all').get((req, res, next) => {
-  res.json({});
+  let cat = catsQueue.dequeue();
+  catsQueue.enqueue(cat);
+  res.send(200);
 });
+
+function getAllCats(catsList) {
+  let currentNode = catsList.first;
+  let catsArray = [];
+  while (currentNode !== null) {
+    catsArray.push(currentNode.value);
+    currentNode = currentNode.next;
+  }
+  return catsArray;
+}
 module.exports = catRouter;
