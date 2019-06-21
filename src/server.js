@@ -8,6 +8,11 @@ const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 app.use(cors());
 
 app.use(morgan(morganSetting));
+
+app.use('/', (req, res) => {
+  res.json('Hello World from Peter, Rahim, Nick')
+})
+
 // Catch-all 404
 app.use(function(req, res, next) {
   const err = new Error('Not Found');
