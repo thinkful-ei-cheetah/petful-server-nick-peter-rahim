@@ -7,9 +7,13 @@ const morgan = require('morgan');
 const app = express();
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 const { PORT } = require('./config')
+const usersRouter = require('./users/users-router')
+
 app.use(cors());
 
 app.use(morgan(morganSetting));
+
+app.use('/api/users', usersRouter)
 
 app.use('/', (req, res) => {
   res.send('<h1>Hello World from Peter, Rahim, Nick</h1>')
