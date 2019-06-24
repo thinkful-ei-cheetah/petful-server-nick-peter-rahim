@@ -16,7 +16,7 @@ const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';
 
-const whitelist = ['http://localhost:3000', 'http://my-project.com'];
+const whitelist = ['http://localhost:3000', 'https://jouzu.now.sh/', ];
 const options = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -37,7 +37,6 @@ app.use(validateBearerToken);
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
-
 
 app.use(errorHandler)
 
