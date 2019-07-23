@@ -10,12 +10,14 @@ const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 const { PORT } = require('./config');
 const dogsRouter = require('./dogs/dogsRouter');
 const catsRouter = require('./cats/catsRouter');
+const usersRouter = require('./users/usersRouter');
 app.use(cors({ origin: corsOptions }));
 
 app.use(morgan(morganSetting));
 
 app.use('/api/dog', dogsRouter);
 app.use('/api/cat', catsRouter);
+app.use('/api/users', usersRouter);
 
 app.use('/', (req, res) => {
   res.send('<h1>Hello World from Peter, Rahim, Nick</h1>');
