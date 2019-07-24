@@ -7,7 +7,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
-      user_name: 'Peter',
+      user_name: 'Thinkful',
       name: 'Zeus',
       sex: 'Male',
       age: 3,
@@ -46,7 +46,7 @@ const STORE = {
         'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
       imageDescription:
         'A smiling golden-brown golden retreiver listening to music.',
-      user_name: 'Thinkful',
+      user_name: 'Peter',
       name: 'Chord',
       sex: 'Male',
       age: 1,
@@ -75,7 +75,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
-      user_name: 'Peter',
+      user_name: 'Thinkful',
       name: 'Stripe',
       sex: 'Female',
       age: 2,
@@ -114,7 +114,7 @@ const STORE = {
         'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
       imageDescription:
         'Orange bengal cat with black stripes lounging on concrete.',
-      user_name: 'Thinkful',
+      user_name: 'Peter',
       name: 'Ben',
       sex: 'Male',
       age: 1,
@@ -134,6 +134,13 @@ const STORE = {
       breed: 'Mixed',
       story: 'Injured'
     }
+  ],
+  users: [
+    { name: 'Bob' },
+    { name: 'Susan' },
+    { name: 'Joseph' },
+    { name: 'Thinkful' },
+    { name: 'David' }
   ]
 };
 
