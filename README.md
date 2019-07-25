@@ -1,6 +1,8 @@
 # FIFO Pet Adoption Agency - Server
 
-[FIFO PAA Live](https://fifo-paa.now.sh/ "Live App")
+[FIFO PAA Live Server](https://vast-falls-46210.herokuapp.com/ "Live Server")
+
+[FIFO PAA Live App](https://fifo-paa.now.sh/ "Live App")
 
 [Client Repo](https://github.com/thinkful-ei-cheetah/petful-client-nick-peter-rahim/tree/nick "Client Repo")
 
@@ -15,10 +17,6 @@ The application communicates with the server to update the queues when a pet is 
 
 
 ## API Services
-
-### Client repo
-
-https://github.com/thinkful-ei-cheetah/petful-client-nick-peter-rahim
 
 ```
 /api
