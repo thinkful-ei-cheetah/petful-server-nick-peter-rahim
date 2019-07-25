@@ -16,6 +16,10 @@ The application communicates with the server to update the queues when a pet is 
 
 ## API Services
 
+### Client repo
+
+https://github.com/thinkful-ei-cheetah/petful-client-nick-peter-rahim
+
 ```
 /api
 ├── /cats
@@ -44,6 +48,6 @@ The application communicates with the server to update the queues when a pet is 
 
 ### Authors
 
->Peter Pae<br/>
->Rahim Morgan<br />
->Nick Lee
+> Peter Pae<br/>
+> Rahim Morgan<br />
+> Nick Lee
