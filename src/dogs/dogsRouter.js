@@ -1,39 +1,23 @@
-'use strict';
+'use strict'
 
-const express = require('express');
-const dogRouter = express.Router();
-const bodyParser = express.json();
-const STORE = require('../store');
-const Queue = require('../utils/Queue');
+const express = require('express')
+const STORE = require('../utils/store')
+const Queue = require('../utils/Queue')
+const { seedQueue, readQueue } = require('../utils/helpers')
 
-let dogsQueue = new Queue();
+const dogsRouter = express.Router()
 
-STORE.dogs.forEach(dog => dogsQueue.enqueue(dog));
+let dogsQueue = new Queue()
+seedQueue(dogsQueue, STORE.dogs)
 
-dogRouter
-  .route('/')
-  .get((req, res, next) => {
-    let dogs = getAllDogs(dogsQueue);
-    res.json(dogs);
-  })
-  .delete((req, res, next) => {
-    let dog = dogsQueue.dequeue();
-    dogsQueue.enqueue(dog);
-    res.sendStatus(200);
-  });
+dogsRouter.route('/queue').get((req, res, next) => {
+  res.json(readQueue(dogsQueue))
+})
 
-dogRouter.route('/all').get((req, res, next) => {
-  res.json({});
-});
+dogsRouter.route('/adopt').delete((req, res, next) => {
+  const dog = dogsQueue.dequeue()
+  dogsQueue.enqueue(dog)
+  res.sendStatus(204)
+})
 
-function getAllDogs(dogsList) {
-  let currentNode = dogsList.first;
-  let dogsArray = [];
-  while (currentNode !== null) {
-    dogsArray.push(currentNode.value);
-    currentNode = currentNode.next;
-  }
-  return dogsArray;
-}
-
-module.exports = dogRouter;
+module.exports = dogsRouter

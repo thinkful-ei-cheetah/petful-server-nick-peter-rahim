@@ -1,35 +1,23 @@
-'use strict';
+'use strict'
 
-const express = require('express');
-const catRouter = express.Router();
-const bodyParser = express.json();
-const STORE = require('../store');
-const Queue = require('../utils/Queue');
+const express = require('express')
+const STORE = require('../utils/store')
+const Queue = require('../utils/Queue')
+const { seedQueue, readQueue } = require('../utils/helpers')
 
-let catsQueue = new Queue();
-STORE.cats.forEach(cat => catsQueue.enqueue(cat));
+const catsRouter = express.Router()
 
-catRouter
-  .route('/')
-  .get((req, res, next) => {
-    let cats = getAllCats(catsQueue);
-    res.json(cats);
-  })
-  .delete((req, res, next) => {
-    let cat = catsQueue.dequeue();
-    catsQueue.enqueue(cat);
-    res.sendStatus(200);
-  });
+const catsQueue = new Queue()
+seedQueue(catsQueue, STORE.cats)
 
-catRouter.route('/all').get((req, res, next) => {});
+catsRouter.route('/queue').get((req, res, next) => {
+  res.json(readQueue(catsQueue))
+})
 
-function getAllCats(catsList) {
-  let currentNode = catsList.first;
-  let catsArray = [];
-  while (currentNode !== null) {
-    catsArray.push(currentNode.value);
-    currentNode = currentNode.next;
-  }
-  return catsArray;
-}
-module.exports = catRouter;
+catsRouter.route('/adopt').delete((req, res, next) => {
+  const cat = catsQueue.dequeue()
+  catsQueue.enqueue(cat)
+  res.sendStatus(204)
+})
+
+module.exports = catsRouter
