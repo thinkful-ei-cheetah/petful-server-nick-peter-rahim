@@ -1,4 +1,4 @@
-const whitelist = ['http://localhost:3000', 'https://petful-npr.now.sh']
+const whitelist = ['http://localhost:3000', 'https://fifo-paa.now.sh/']
 
 const originGenerator = function(origin, callback) {
   if (whitelist.indexOf(origin) !== -1 || !origin) {

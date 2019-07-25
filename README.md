@@ -1,23 +1,40 @@
-# Petful - Server
+# FIFO Pet Adoption Agency - Server
 
-Live @ [Petful-server](https://fierce-bayou-88462.herokuapp.com/)
+[FIFO PAA Live](https://fifo-paa.now.sh/ "Live App")
+
+[Client Repo](https://github.com/thinkful-ei-cheetah/petful-client-nick-peter-rahim/tree/nick "Client Repo")
 
 ## Introduction
 
-Petful - server provides API services to Petful - client. 
+FIFO PAA - Server provides API services to FIFO PAA - client. 
 
-> This server does not use a database and is intended to serve static data.
+_This server does not use a database and is intended to serve static data._
 
-Petful-server leverages the queue data structure to manage the list of cats and dogs available for 'adoption'. The queue can be updated to dequeue adopted pets and re-enqueue them to the end of the list.
+FIFO PAA simulates a web application for pet adoption. The server maintains three singly-linked queues: one for available dogs, one for available cats, and another for logged-in users.
+The application communicates with the server to update the queues when a pet is adopted and re-renders the updated information received from the backend. 
+
 
 ## API Services
 
 ```
-/api/dog GET
-/api/dog DELETE
-
-/api/cat GET
-/api/cat DELETE
+/api
+├── /cats
+│   └── GET
+│   |   └── /queue
+│   └── DELETE
+│       └── /adopt
+|
+├── /dogs
+│   └── GET
+│   |   └── /queue
+│   └── DELETE
+│       └── /adopt
+|
+└── /users
+    └── GET
+        └── /queue
+    └── DELETE
+        └── /adopt
 ```
 
 ## Core Technologies
